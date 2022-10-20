@@ -29,6 +29,7 @@ const players = [
       playerName: "player de prueba seis",
       isDead: false,
     },
+    
   ];
   
   // console.log(players[0])
