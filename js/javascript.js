@@ -1,66 +1,62 @@
-const players = [
-    {
-      id: 1,
-      playerName: "player de prueba",
-      isDead: false,
-    },
-    {
-      id: 2,
-      playerName: "player de prueba dos",
-      isDead: false,
-    },
-    {
-      id: 3,
-      playerName: "player de prueba tres",
-      isDead: false,
-    },
-    {
-      id: 4,
-      playerName: "player de prueba cuatro",
-      isDead: false,
-    },
-    {
-      id: 5,
-      playerName: "player de prueba cinco",
-      isDead: false,
-    },
-    {
-      id: 6,
-      playerName: "player de prueba seis",
-      isDead: false,
-    },
-    
-  ];
-  
-  // console.log(players[0])
-  
-  const render = () => {
-    let listPlayers = document.getElementById("listOfPlayers");
-    let htmlPlayers = ``;
-  
-    players.forEach(
-      (player) =>
-        (htmlPlayers += `<li class="item_list_player">
-          <p class="player_name">${player.playerName}</p>
-          <i class="bi bi-trash-fill player_delete"></i>
-          </li>`)
-    );
-    listPlayers.innerHTML = htmlPlayers;
-    addDeleteButton();
-  };
-  
-  const addDeleteButton = (e) => {
-    let deletePlayer = document.querySelectorAll(".player_delete");
-    deletePlayer.forEach((deleteButton) =>
-      deleteButton.addEventListener("click", (e) => e.preventDefault())
-    );
-  };
-  
+// Datos
+let players = [
+  "hoal","hola"
+];
+
+// logica
+
+// Añadir listeners
+
+const deleteButtonHandler = (e) => {
+  let idToDelete = e.target.id;
+  players = players.filter((player) => player.id != idToDelete);
   render();
-  
-//   const sendPlayer = (e) => {
-//     const inputPLayer = document.getElementById("inputPlayer");
-//     const btnSend = document.getElementById("btnSend");
-//     btnSend.addEventListener();
-//   };
-  
+};
+
+// Añadir a jugador
+
+let btnAddPlayer = document.getElementById("addPlayer");
+btnAddPlayer.addEventListener("click", (e) => {
+  e.preventDefault();
+  let inputPlayer = document.getElementById("inputPlayer");
+
+  let idNewPlayer = players.length + 1;
+  let nameNewPlayer = inputPlayer.value;
+  if (inputPlayer.value == "") {
+    alert("no introduciste ningun nombre");
+  } else {
+    players.push({
+      id: idNewPlayer,
+      playerName: nameNewPlayer,
+      isDead: false,
+    });
+  }
+  inputPlayer.value = "";
+  render();
+});
+
+// doom
+const render = () => {
+  let htmlPlayers = ``;
+  let listPlayers = document.getElementById("listOfPlayers");
+
+  players.forEach(
+    (player) =>
+      (htmlPlayers += `<li class="item_list_player" >
+          <p class="player_name">${player.playerName}</p>
+          <i class="bi bi-trash-fill player_delete"id="${player.id}"></i>
+          </li>`)
+  );
+  listPlayers.innerHTML = htmlPlayers;
+  addDeleteButton();
+};
+
+const addDeleteButton = (e) => {
+  let deletePlayer = document.querySelectorAll(".player_delete");
+
+  deletePlayer.forEach((deleteButton) =>
+    deleteButton.addEventListener("click", deleteButtonHandler)
+  );
+};
+
+render();
