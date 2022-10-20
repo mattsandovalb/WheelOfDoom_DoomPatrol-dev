@@ -1,0 +1,14 @@
+:root{
+    /* COLORS */
+    --red-dark:#2A0609;
+    --purple:#3A1421;
+    --red:#85160C;
+    --salmon:#B86450;
+    --red-light:#E93F33;
+    --white:white;
+    --black: #190002;
+    /* FONT-TYPE */
+    --retro-font:'Press Start 2P', cursive;
+    --orbitron-font:'Orbitron', sans-serif;
+}
+
