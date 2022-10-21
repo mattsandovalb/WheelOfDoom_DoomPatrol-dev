@@ -1,6 +1,5 @@
 // Datos
 let players = [
-  "hoal","hola"
 ];
 
 // logica
