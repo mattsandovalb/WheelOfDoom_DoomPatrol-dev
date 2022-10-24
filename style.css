@@ -12,3 +12,37 @@
     --orbitron-font:'Orbitron', sans-serif;
 }
 
+.page_display {
+    background-image: url(./assets/img/background_image.png);
+    height: 100vh;
+    object-fit: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.home_logo {
+    display: flex;
+    justify-content: center;
+}
+
+.home_logo img {
+    height: 90%;
+    width: 90%;
+}
+
+.start_button {
+    display: flex;
+    justify-content: center;
+}
+
+.start_button img {
+    height: 90%;
+    width: 90%;
+}
+
+
+
+

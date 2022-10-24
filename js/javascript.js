@@ -59,3 +59,9 @@ const addDeleteButton = (e) => {
 };
 
 render();
+function guardarEnStorage(object){
+    let playersLocal = object;
+
+    localStorage.setItem("playersKey", playersLocal)
+
+}
