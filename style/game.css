@@ -1,0 +1,26 @@
+.gamePageDisplay {
+    background-image: url(../assets/img/fondogamered.png);
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gun {
+    position:absolute;
+    bottom: 0px;
+
+    /*left: 50%;*/
+}
+
+.kill_button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
