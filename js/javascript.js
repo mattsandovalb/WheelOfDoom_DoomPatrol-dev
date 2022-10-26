@@ -1,6 +1,6 @@
-let playersStorage = JSON.parse(localStorage.getItem("playersKey")); // Traemos el array de jugadores desde el local storage (puede estar lleno o vacío)
+// let playersStorage = JSON.parse(localStorage.getItem("playersKey")); // Traemos el array de jugadores desde el local storage (puede estar lleno o vacío)
 // Datos
-let players = playersStorage;
+let players = [];
 
 // logica
 
