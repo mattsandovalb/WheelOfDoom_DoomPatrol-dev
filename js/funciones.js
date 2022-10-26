@@ -49,6 +49,7 @@ var numero = seleccion(array);
 
         //Metemos el objeto/nombre en la lista nueva.
         muertos.push(listaDeMuertos(array,numero));
+        
         //Borramos el objeto/nombre de la lista
         array = kill(array,numero);
 
