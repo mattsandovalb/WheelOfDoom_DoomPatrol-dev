@@ -16,10 +16,11 @@ const deleteButtonHandler = (e) => {
 // Añadir a jugador , creando un nuevo objeto y enviamos el objeto mediante .push al array de players
 
 let btnAddPlayer = document.getElementById("addPlayer");
+
 btnAddPlayer.addEventListener("click", (e) => {
   e.preventDefault();
   let inputPlayer = document.getElementById("inputPlayer");
-
+  
   let idNewPlayer = players.length;
 
   let nameNewPlayer = inputPlayer.value;
