@@ -1,25 +1,27 @@
+let playersStorage = JSON.parse(localStorage.getItem("playersKey")); // Traemos el array de jugadores desde el local storage (puede estar lleno o vacío)
 // Datos
-let players = [
-];
+let players = playersStorage;
 
 // logica
 
-// Añadir listeners
+// Añadir envento a todos los botónes para eliminar jugadores
 
 const deleteButtonHandler = (e) => {
   let idToDelete = e.target.id;
   players = players.filter((player) => player.id != idToDelete);
+  guardarEnStorage(players);
   render();
 };
 
-// Añadir a jugador
+// Añadir a jugador , creando un nuevo objeto y enviamos el objeto mediante .push al array de players
 
 let btnAddPlayer = document.getElementById("addPlayer");
 btnAddPlayer.addEventListener("click", (e) => {
   e.preventDefault();
   let inputPlayer = document.getElementById("inputPlayer");
 
-  let idNewPlayer = players.length + 1;
+  let idNewPlayer = players.length;
+
   let nameNewPlayer = inputPlayer.value;
   if (inputPlayer.value == "") {
     alert("no introduciste ningun nombre");
@@ -32,11 +34,14 @@ btnAddPlayer.addEventListener("click", (e) => {
   }
   inputPlayer.value = "";
   render();
+  guardarEnStorage(players);
 });
 
 // doom
 const render = () => {
   let htmlPlayers = ``;
+
+
   let listPlayers = document.getElementById("listOfPlayers");
 
   players.forEach(
@@ -59,9 +64,10 @@ const addDeleteButton = (e) => {
 };
 
 render();
-function guardarEnStorage(object){
-    let playersLocal = object;
 
-    localStorage.setItem("playersKey", playersLocal)
 
+function guardarEnStorage(object) {
+  let playersLocal = object;
+
+  localStorage.setItem("playersKey", JSON.stringify(playersLocal));
 }
