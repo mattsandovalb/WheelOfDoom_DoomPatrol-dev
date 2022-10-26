@@ -47,6 +47,39 @@ table {
 	border-spacing: 0;
 }
 
+/* Inputs */
+/* *::-webkit-input-placeholder {
+
+	font-family: 'Orbitron', sans-serif;
+	font-size:2vh;
+	color:white;
+
+}
+*:-moz-placeholder {
+
+	font-family: 'Orbitron', sans-serif;
+	font-size:2vh;
+	color:white;
+
+}
+*::-moz-placeholder {
+
+	font-family: 'Orbitron', sans-serif;
+	font-size:2vh;
+	color:white;
+
+}
+*:-ms-input-placeholder {
+
+	font-family: 'Orbitron', sans-serif;
+	font-size:2vh;
+	color:white;
+
+} */
+
+/* Fin de inputs */
+
+
 /* GLOBAL */
 :root{
     /* COLORS */
