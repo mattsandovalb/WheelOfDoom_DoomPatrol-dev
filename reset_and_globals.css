@@ -48,34 +48,34 @@ table {
 }
 
 /* Inputs */
-*::-webkit-input-placeholder {
-/* Google Chrome y Safari */
+/* *::-webkit-input-placeholder {
+
 	font-family: 'Orbitron', sans-serif;
 	font-size:2vh;
 	color:white;
 
 }
 *:-moz-placeholder {
-/* Firefox anterior a 19 */
+
 	font-family: 'Orbitron', sans-serif;
 	font-size:2vh;
 	color:white;
 
 }
 *::-moz-placeholder {
-/* Firefox 19 y superior */
+
 	font-family: 'Orbitron', sans-serif;
 	font-size:2vh;
 	color:white;
 
 }
 *:-ms-input-placeholder {
-/* Internet Explorer 10 y superior */
+
 	font-family: 'Orbitron', sans-serif;
 	font-size:2vh;
 	color:white;
 
-}
+} */
 
 /* Fin de inputs */
 

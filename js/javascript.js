@@ -1,6 +1,6 @@
-let playersStorage = JSON.parse(localStorage.getItem("playersKey")); // Traemos el array de jugadores desde el local storage (puede estar lleno o vacío)
+// let playersStorage = JSON.parse(localStorage.getItem("playersKey")); // Traemos el array de jugadores desde el local storage (puede estar lleno o vacío)
 // Datos
-let players = playersStorage;
+let players = [];
 
 // logica
 
@@ -16,10 +16,11 @@ const deleteButtonHandler = (e) => {
 // Añadir a jugador , creando un nuevo objeto y enviamos el objeto mediante .push al array de players
 
 let btnAddPlayer = document.getElementById("addPlayer");
+
 btnAddPlayer.addEventListener("click", (e) => {
   e.preventDefault();
   let inputPlayer = document.getElementById("inputPlayer");
-
+  
   let idNewPlayer = players.length;
 
   let nameNewPlayer = inputPlayer.value;
