@@ -41,12 +41,16 @@ function killPlayer() {
 const buttonKill = document.getElementById("kill");
 buttonKill.addEventListener("click", animationAndPopUP);
 
+let soundDead = new Audio("../assets/sounds/Sounds/wilhem_dead.mp3")
+
 function animationAndPopUP() {
   if (listaDeVivos.length >= 0) {
     setTimeout(soloKill, 1700, jugadorSacrificado);
+    soundDead.play()
     comeKilled();
     playGif();
     changeGiff(true);
+
   } else {
   }
 }

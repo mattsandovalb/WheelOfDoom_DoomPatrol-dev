@@ -17,6 +17,8 @@ const deleteButtonHandler = (e) => {
 
 let btnAddPlayer = document.getElementById("addPlayer");
 
+let soundAddPlayer = new Audio("../assets/sounds/Sounds/sonido_boton_1.mp3")
+
 btnAddPlayer.addEventListener("click", (e) => {
   e.preventDefault();
   let inputPlayer = document.getElementById("inputPlayer");
@@ -34,6 +36,7 @@ btnAddPlayer.addEventListener("click", (e) => {
     });
   }
   inputPlayer.value = "";
+  soundAddPlayer.play()
   render();
   guardarEnStorage(players);
 });
