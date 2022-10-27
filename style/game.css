@@ -3,7 +3,7 @@ body {
 }
 
 .gamePageDisplay {
-  background-image: url(../assets/img/fondogamered.png);
+  background-image: url(../assets/img/background_fact_pixel.png);
   background-size: cover;
   background-position: center;
   object-fit: cover;
@@ -19,9 +19,18 @@ body {
 .gun {
   position: absolute;
   bottom: 0px;
-
-  /*left: 50%;*/
+  z-index:4;
 }
+
+.gif_gun{
+  width:60vh;
+  height:50vh;
+}
+.img_gun{
+  width:20vh;
+  height:22vh;
+}
+
 
 .playerContainer{
     position: absolute;

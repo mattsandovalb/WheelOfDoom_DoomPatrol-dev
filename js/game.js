@@ -24,8 +24,10 @@ function killPlayer(){
         console.log(listaDeVivos); // console.log de lista de vivos
 
         //soloKill(nombreDelJugadorSeleccionado)
-        setTimeout(soloKill, 3000, (nombreDelJugadorSeleccionado));
+        setTimeout(soloKill, 1700, (nombreDelJugadorSeleccionado));
         comeKilled()
+        playGif()
+        setTimeout(esonder,900)
 
     }
     else{ // si la condición anterior no se cumple entonces el array de vivos está vacio
@@ -49,8 +51,9 @@ function soloKill (nameKilled){
     const modal_container = document.getElementById('modal_container');
     const btnNextKill = document.getElementById('nextKill');
     const alertPlayerDeleted = document.getElementById('alertPlayerDeleted');
+    const btnList = document.getElementById('list');
     // const open = document.getElementById('kill');
-
+    btnList.innerHTML=("")
     alertPlayerDeleted.innerHTML= `Player... ${nameKilled} has been deleted`;
     
     btnNextKill.addEventListener('click', () =>{
@@ -58,6 +61,8 @@ function soloKill (nameKilled){
         /*imgPlayer.classList.remove("transleft");*/
         imgPlayer.classList.add("transleft");
         imgPlayer.classList.remove("transdown");
+        setTimeout(document.getElementById("player").style.visibility = 'visible',3000);
+
     })
 
 
@@ -97,25 +102,53 @@ function soloKill (nameKilled){
 
 
 //ALL CODERS DEAD POPUP
- function gameOver (){  
-     const removeButtonContinue = document.getElementById('nextKill');
-     const open = document.getElementById('kill');
-     const modal_container = document.getElementById('modal_container');
-     const close = document.getElementById('close');  
-     open.addEventListener('click', () => {
-         document.getElementById('alertPlayerDeleted').innerHTML = 'Game Over <br>All coders are  Dead'
-         removeButtonContinue.innerHTML= '';
-         modal_container.classList.add('show');  
+function gameOver (){  
+    const removeButtonContinue = document.getElementById('nextKill');
+    const open = document.getElementById('kill');
+    const modal_container = document.getElementById('modal_container');
+    const close = document.getElementById('close'); 
+    const containerButtons = document.getElementById("container_buttons") 
+
+    open.addEventListener('click', () => {
+        document.getElementById('alertPlayerDeleted').innerHTML = 'Game Over <br>All coders are  Dead'
+        removeButtonContinue.innerHTML= '';
+        modal_container.classList.add('show');  
        });  
+    containerButtons.innerHTML=`<a href="./list.html" id="list">            
+    <img src="../assets/svg/list.svg" alt="" class="btcontinue">
+  </a>`
         // close.addEventListener('click', () => {
         //   modal_container.classList.remove('show');
         // });
         
-     }
+}
 const imgPlayer = document.getElementById('player');
+
 function comeKilled (){
     imgPlayer.classList.remove("transleft")
     imgPlayer.classList.add("transdown")
 }
 
+const gunContainer = document.getElementById("gun_container")
+let shootSound = new Audio("../assets/sounds/Sounds/shootgun_shoot_1.mp3")
+let chargeSound = new Audio("../assets/sounds/Sounds/reload_1.mp3")
 
+function playGif(){
+    gunContainer.innerHTML=`<img src="../assets/img/gunGif.gif" alt="gun" class="gif_gun">`;
+    setTimeout(playimg, 1700);
+    shootSound.play();
+    setTimeout(chargePLay, 500);
+}
+
+chargeSound.play();
+
+function chargePLay(){
+    chargeSound.play();
+}
+function playimg(){
+    gunContainer.innerHTML=`<img src="../assets/img/maskgroup.png" alt="gun" class="img_gun">`;
+}
+
+function esonder(){
+    document.getElementById("player").style.visibility = 'hidden';
+}

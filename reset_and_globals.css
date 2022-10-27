@@ -48,7 +48,7 @@ table {
 }
 
 /* Inputs */
-/* *::-webkit-input-placeholder {
+ *::-webkit-input-placeholder {
 
 	font-family: 'Orbitron', sans-serif;
 	font-size:2vh;
@@ -75,7 +75,7 @@ table {
 	font-size:2vh;
 	color:white;
 
-} */
+} 
 
 /* Fin de inputs */
 
