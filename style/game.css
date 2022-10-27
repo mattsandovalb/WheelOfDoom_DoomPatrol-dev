@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .gamePageDisplay {
     background-image: url(../assets/img/fondogamered.png);
     background-size: cover;
@@ -21,28 +25,27 @@
 
 .playerContainer{
     position: absolute;
-    display: flex;
+    /*display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
     width: 30vh;
     height: 60vh;
-    animation: transleft 1s;
-    animation: transdown 1s;
+    /*margin-left: 150%;*/
 }
 
 .transleft {
     animation: transleft 1s;
 }
 
-/*.transdown {
+.transdown {
     animation: transdown 1s:
-}*/
+}
 
 
 @keyframes transleft {
     from {
-        margin-left: 100%;
+ 
     }
     to {
         margin-left: 0%;

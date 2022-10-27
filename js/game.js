@@ -19,6 +19,7 @@ function killPlayer(){
         listaDeVivos.splice(indiceAleatorio,1) // eliminar al jugador seleccionado de la lista de vivos
 
         console.log(listaDeVivos) // console.log de lista de vivos
+        comeKilled()
     }
     else{ // si la condición anterior no se cumple entonces el array de vivos está vacio
         alert("Ya no queda nadie vivo")
@@ -34,3 +35,15 @@ buttonKill.addEventListener('click',killPlayer)
     let (listaDeVivos[indiceAleatorio]) = transleft
     let (listaDeVivos.splice(indiceAleatorio,1)) = transdown
 }*/
+
+const imgPlayer = document.getElementById('player');
+function comeKilled (){
+    imgPlayer.classList.add("transdown")
+}
+
+
+
+
+
+
+ 
