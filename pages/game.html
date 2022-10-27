@@ -21,9 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
     
-    <script src="../js/game.js" type="text/javascript" defer></script>
     <title>Wheel of Dom</title>
 </head>
     <body>
@@ -37,22 +35,24 @@
 
             <div id="modal_container" class="modal-container">
                 <div class="container_imagen"><img
-                    src="../assets/img/png-clipart-doom-3-tattoo-soul-holy-month-computer-wallpaper-fictional-character.png"
+                    src="../assets/img/skeleton.png"
                     id="imagen">
                 </div>
                 <div class="modal">
-                  <h3 id="gameover"></h3>
+                  <h3 id="alertPlayerDeleted"></h3>
                   <div class="container_bottons">
                     <!-- <button id="close">Cerrar</button>  -->
-                    <div id="close">
+                    <div id="nextKill">
                       <img src="../assets/svg/Continue.svg" alt="" class="btcontinue">
                     </div>
-                    <div id="list">            
+                    <a href="./list.html" id="list">            
                       <img src="../assets/svg/list.svg" alt="" class="btcontinue">
-                    </div>
+                    </a>
                   </div>
                 </div>
-              </div>
+            </div>
+
         </main>
+        <script src="../js/game.js" type="text/javascript" defer></script>
     </body>
 </html>
