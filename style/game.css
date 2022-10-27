@@ -19,6 +19,49 @@
     /*left: 50%;*/
 }
 
+.playerContainer{
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 30vh;
+    height: 60vh;
+    animation: transleft 1s;
+    animation: transdown 1s;
+}
+
+.transleft {
+    animation: transleft 1s;
+}
+
+/*.transdown {
+    animation: transdown 1s:
+}*/
+
+
+@keyframes transleft {
+    from {
+        margin-left: 100%;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
+
+/*@keyframes transdown {
+    from {
+        margin-top: 0%;
+    }
+    to {
+        margin-top: 100%;
+    }
+}*/
+
+.player{
+    width: 100%;
+}
+
 .kill_button {
     position: absolute;
     bottom: 5px;

@@ -28,3 +28,9 @@ function killPlayer(){
 const buttonKill = document.getElementById('kill')
 
 buttonKill.addEventListener('click',killPlayer)
+
+// Procurando vincular la accion con la animacion pero no es correcto. Hace falta saber de eventos. 
+/*function PerEntr (){
+    let (listaDeVivos[indiceAleatorio]) = transleft
+    let (listaDeVivos.splice(indiceAleatorio,1)) = transdown
+}*/
