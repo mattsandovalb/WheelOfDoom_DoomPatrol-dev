@@ -24,6 +24,7 @@ function killPlayer(){
         console.log(listaDeVivos) // console.log de lista de vivos
 
         soloKill(nombreDelJugadorSeleccionado)
+        comeKilled()
 
     }
     else{ // si la condición anterior no se cumple entonces el array de vivos está vacio
@@ -52,7 +53,11 @@ function soloKill (nameKilled){
     
     btnNextKill.addEventListener('click', () =>{
         modal_container.classList.remove("show");
+        /*imgPlayer.classList.remove("transleft");*/
+        imgPlayer.classList.add("transleft");
+        imgPlayer.classList.remove("transdown");
     })
+
 
     modal_container.classList.add("show");
 
@@ -105,6 +110,7 @@ function gameOver (){
 //     }
 const imgPlayer = document.getElementById('player');
 function comeKilled (){
+    imgPlayer.classList.remove("transleft")
     imgPlayer.classList.add("transdown")
 }
 

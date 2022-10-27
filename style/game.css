@@ -39,27 +39,27 @@ body {
 }
 
 .transdown {
-    animation: transdown 1s:
+    animation: transdown 1s;
 }
 
 
 @keyframes transleft {
     from {
- 
+        margin-left: 150%
     }
     to {
         margin-left: 0%;
     }
 }
 
-/*@keyframes transdown {
+@keyframes transdown {
     from {
         margin-top: 0%;
     }
     to {
-        margin-top: 100%;
+        margin-top: 150%;
     }
-}*/
+}
 
 .player{
     width: 100%;
