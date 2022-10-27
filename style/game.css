@@ -32,52 +32,127 @@ body {
 }
 
 
+.block_next{
+  position:fixed;
+  width:110%;
+  margin:0vh 0vh -1vh -1vh;
+  height:110%;
+  background-color:rgba(24, 29, 24, 0.336);
+}
+.block_next h1{
+  position:absolute;
+  color:white;
+  margin:4vh;
+  bottom:0;
+  z-index: 5;;
+}
+.nextButton_oficial{
+  color:white;
+  border: 3px solid white;
+  margin:3vh;
+  cursor:pointer;
+  padding:3vh 5vh;
+  transition:0.3s;
+  animation:vibrate 1s infinite;
+}
+@keyframes vibrate{
+  0%{
+    padding:3vh 5vh;
+    font-size:3vh;
+  }
+  50%{
+    padding:3.8vh 5.8vh;
+    font-size:3.5vh;
+  }
+  100%{
+    padding:3vh 5vh;
+    font-size:3vh;
+  }
+}
+
+.waitingNext{
+  opacity: 0;
+  z-index:-1
+}
+
 .playerContainer{
     position: absolute;
-    /*display: flex;
-    flex-flow: column nowrap;
+    display: flex;
     justify-content: center;
-    align-items: center;*/
-    width: 30vh;
-    height: 60vh;
+    align-items: center;
+    width: 35vh;
+    height: 66vh;
     /*margin-left: 150%;*/
 }
 
+.playerContainer h4{
+  position: absolute;
+  color:white;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-shadow: 0vh 0vh 4vh black;
+}
+
+.shadow{
+  opacity:0;
+}
+
 .transleft {
-    animation: transleft 1s;
+    animation: transleft 2s;
 }
 
 .transdown {
     animation: transdown 1s;
+    opacity: 0;
 }
 
 
 @keyframes transleft {
-    from {
-        margin-left: 150%
+    /* from {
+        margin-left: 150%;
     }
     to {
         margin-left: 0%;
-    }
+    } */
+  0% {
+    margin-left: 150%;
+  }
+  /* 50%{margin-left:80%;} */
+  100% {
+      margin-left: 0%;
+  }
 }
 
 @keyframes transdown {
-    from {
+    0% {
         margin-top: 0%;
+        opacity:1
     }
-    to {
+
+    80%{
+      margin-top: 0;
+      opacity: 1;
+    }
+    100% {
         margin-top: 150%;
+        opacity: 0;
     }
 }
 
 .player{
     width: 100%;
+    transform: scaleX(-1);
 }
 
 .kill_button {
   position: absolute;
   bottom: 5px;
   right: 5px;
+}
+.nextButton{
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
 }
 
 /* Pup Up*/
