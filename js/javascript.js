@@ -1,10 +1,10 @@
 // let playersStorage = JSON.parse(localStorage.getItem("playersKey")); // Traemos el array de jugadores desde el local storage (puede estar lleno o vacío)
-// Datos
+// DATOS
 let players = [];
 
-// logica
+// LÓGICA
 
-// Añadir envento a todos los botónes para eliminar jugadores
+// Añadir envento a todos los botones para eliminar jugadores
 
 const deleteButtonHandler = (e) => {
   let idToDelete = e.target.id;
@@ -13,7 +13,7 @@ const deleteButtonHandler = (e) => {
   render();
 };
 
-// Añadir a jugador , creando un nuevo objeto y enviamos el objeto mediante .push al array de players
+// Añadir jugador, creando un nuevo objeto y enviándolo mediante .push al array de players
 
 let btnAddPlayer = document.getElementById("addPlayer");
 
@@ -25,7 +25,7 @@ btnAddPlayer.addEventListener("click", (e) => {
 
   let nameNewPlayer = inputPlayer.value;
   if (inputPlayer.value == "") {
-    alert("no introduciste ningun nombre");
+    alert("please enter a valid name");
   } else {
     players.push({
       id: idNewPlayer,

@@ -82,7 +82,6 @@ body {
     align-items: center;
     width: 35vh;
     height: 66vh;
-    /*margin-left: 150%;*/
 }
 
 .playerContainer h4{
@@ -108,16 +107,9 @@ body {
 
 
 @keyframes transleft {
-    /* from {
-        margin-left: 150%;
-    }
-    to {
-        margin-left: 0%;
-    } */
   0% {
     margin-left: 150%;
   }
-  /* 50%{margin-left:80%;} */
   100% {
       margin-left: 0%;
   }
@@ -172,16 +164,6 @@ body {
   font-family: "Orbitron";
 
 }
-
-/* button {
-  background-color: #47a386;
-  border: 0;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  font-size: 14px;
-  padding: 10px 25px;
-} */
 
 .modal-container {
   display: flex;

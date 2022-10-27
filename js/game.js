@@ -75,11 +75,10 @@ function soloKill(nameKilled) {
 
   // const open = document.getElementById('kill');
   btnList.innerHTML = "";
-  alertPlayerDeleted.innerHTML = `Player... ${nameKilled} has been deleted`;
+  alertPlayerDeleted.innerHTML = `${nameKilled} is dead`;
 
   btnNextKill.addEventListener("click", () => {
     modal_container.classList.remove("show");
-    /*imgPlayer.classList.remove("transleft");*/
     imgPlayer.classList.add("shadow");
     nextButton.classList.remove("waitingNext");
     nextContainer.classList.add("block_next");
@@ -98,7 +97,7 @@ function gameOver() {
 
   open.addEventListener("click", () => {
     document.getElementById("alertPlayerDeleted").innerHTML =
-      "Game Over <br>All coders are  Dead";
+      "All coders are dead<br>Game Over";
     removeButtonContinue.innerHTML = "";
     modal_container.classList.add("show");
   });
