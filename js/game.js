@@ -34,7 +34,7 @@ function killPlayer() {
     return nombreDelJugadorSeleccionado;
   } else {
     // si la condición anterior no se cumple entonces el array de vivos está vacio
-    gameOver();
+    // gameOver();
   }
 }
 
@@ -44,14 +44,17 @@ buttonKill.addEventListener("click", animationAndPopUP);
 let soundDead = new Audio("../assets/sounds/Sounds/wilhem_dead.mp3")
 
 function animationAndPopUP() {
-  if (listaDeVivos.length >= 0) {
+  if (listaDeVivos.length > 0) {
     setTimeout(soloKill, 1700, jugadorSacrificado);
+    open.classList.remove('vibrate_kill')
     soundDead.play()
     comeKilled();
     playGif();
     changeGiff(true);
 
   } else {
+    gameOver();
+    buttonKill.classList.add('shadow')
   }
 }
 
@@ -67,6 +70,7 @@ function nextPlayer() {
   imgPlayer.classList.remove("transdown");
   let nombreDelJugadorSeleccionado = killPlayer();
   changeGiff(false, nombreDelJugadorSeleccionado);
+  open.classList.add('vibrate_kill')
 }
 
 //ONE CODER IS DEAD
@@ -93,23 +97,30 @@ function soloKill(nameKilled) {
 }
 
 //ALL CODERS DEAD POPUP
-function gameOver() {
+
   const removeButtonContinue = document.getElementById("nextKill");
   const open = document.getElementById("kill");
   const modal_container = document.getElementById("modal_container");
   const close = document.getElementById("close");
   const containerButtons = document.getElementById("container_buttons");
-
-  open.addEventListener("click", () => {
-    document.getElementById("alertPlayerDeleted").innerHTML =
-      "Game Over <br>All coders are  Dead";
-    removeButtonContinue.innerHTML = "";
-    modal_container.classList.add("show");
-  });
+function gameOver() {
+  console.log("aquí aparece el pupup")
+  function showModal (){
+      document.getElementById("alertPlayerDeleted").innerHTML =
+        "El ultimo jugador ha muerto";
+      removeButtonContinue.innerHTML = "";
+      modal_container.classList.add("show");
+  }
+  setTimeout(showModal,2000)
+  playGif()
+  comeKilled();
+  changeGiff(true);
   containerButtons.innerHTML = `<a href="./list.html" id="list">            
     <img src="../assets/svg/list.svg" alt="" class="btcontinue">
   </a>`;
 }
+
+
 const imgPlayer = document.getElementById("player");
 
 function comeKilled() {
