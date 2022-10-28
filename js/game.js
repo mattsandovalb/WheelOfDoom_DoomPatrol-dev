@@ -106,7 +106,7 @@ function gameOver() {
   console.log("aquí aparece el pupup")
   function showModal (){
       document.getElementById("alertPlayerDeleted").innerHTML =
-        "All players are dead<br>GAME OVER";
+        "All players are dead<br/><br/>GAME OVER";
       removeButtonContinue.innerHTML = "";
       modal_container.classList.add("show");
   }
