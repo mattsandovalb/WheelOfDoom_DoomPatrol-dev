@@ -83,11 +83,10 @@ function soloKill(nameKilled) {
 
   // const open = document.getElementById('kill');
   btnList.innerHTML = "";
-  alertPlayerDeleted.innerHTML = `Player... ${nameKilled} has been deleted`;
+  alertPlayerDeleted.innerHTML = `${nameKilled} is dead`;
 
   btnNextKill.addEventListener("click", () => {
     modal_container.classList.remove("show");
-    /*imgPlayer.classList.remove("transleft");*/
     imgPlayer.classList.add("shadow");
     nextButton.classList.remove("waitingNext");
     nextContainer.classList.add("block_next");
@@ -107,7 +106,7 @@ function gameOver() {
   console.log("aquí aparece el pupup")
   function showModal (){
       document.getElementById("alertPlayerDeleted").innerHTML =
-        "El ultimo jugador ha muerto";
+        "All players are dead<br>GAME OVER";
       removeButtonContinue.innerHTML = "";
       modal_container.classList.add("show");
   }
