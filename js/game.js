@@ -25,10 +25,13 @@ function killPlayer(){
 
         //soloKill(nombreDelJugadorSeleccionado)
         setTimeout(soloKill, 3000, (nombreDelJugadorSeleccionado));
+        //Animacion del personaje derecha a centro.
         comeKilled()
-
+        //Ver linea 126.
+        setTimeout(esonder,900);
     }
     else{ // si la condición anterior no se cumple entonces el array de vivos está vacio
+        document.getElementById("player").style.visibility = 'hidden';
         gameOver()
     };
     
@@ -55,6 +58,8 @@ function soloKill (nameKilled){
     
     btnNextKill.addEventListener('click', () =>{
         modal_container.classList.remove("show");
+        
+        setTimeout(document.getElementById("player").style.visibility = 'visible',3000);
         /*imgPlayer.classList.remove("transleft");*/
         imgPlayer.classList.add("transleft");
         imgPlayer.classList.remove("transdown");
@@ -116,6 +121,12 @@ const imgPlayer = document.getElementById('player');
 function comeKilled (){
     imgPlayer.classList.remove("transleft")
     imgPlayer.classList.add("transdown")
+
+    
+}
+//Se hace funcion
+function esonder(){
+    document.getElementById("player").style.visibility = 'hidden';
 }
 
 
