@@ -135,7 +135,7 @@ header {
   bottom: 0;
 }
 
-/* BUTTON PLAY */
+/*PLAY BUTTON */
 
 .btn_play {
   width: 10vh;
@@ -191,9 +191,6 @@ header {
 
 /* MEDIA MOVILE */
 @media (max-width: 660px) {
-  .victims_title {
-    /* color:red */
-  }
   header {
     opacity: 0;
   }
