@@ -27,7 +27,7 @@ btnAddPlayer.addEventListener("click", (e) => {
 
   let nameNewPlayer = inputPlayer.value;
   if (inputPlayer.value == "") {
-    alert("please enter a valid name");
+    alert("Please enter a valid name");
   } else {
     players.push({
       id: idNewPlayer,
@@ -75,3 +75,18 @@ function guardarEnStorage(object) {
 
   localStorage.setItem("playersKey", JSON.stringify(playersLocal));
 }
+
+const Play = document.getElementById("goPlay");
+
+Play.addEventListener("click",(e) =>{
+  let players = JSON.parse(localStorage.getItem("playersKey"));
+
+  if(players.length > 1){
+    Play.href = "./game.html"
+  } 
+  else{
+    alert("You need at least two players to start.")
+  }
+
+  
+})
