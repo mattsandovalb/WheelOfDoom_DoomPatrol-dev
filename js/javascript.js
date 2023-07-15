@@ -1,6 +1,6 @@
 // let playersStorage = JSON.parse(localStorage.getItem("playersKey")); // Traemos el array de jugadores desde el local storage (puede estar lleno o vacío)
 // DATOS
-let players = [];
+let targets = [];
 
 // LÓGICA
 
@@ -8,8 +8,8 @@ let players = [];
 
 const deleteButtonHandler = (e) => {
   let idToDelete = e.target.id;
-  players = players.filter((player) => player.id != idToDelete);
-  guardarEnStorage(players);
+  targets = targets.filter((target) => target.id != idToDelete);
+  guardarEnStorage(targets);
   render();
 };
 
@@ -23,13 +23,13 @@ btnAddPlayer.addEventListener("click", (e) => {
   e.preventDefault();
   let inputPlayer = document.getElementById("inputPlayer");
   
-  let idNewPlayer = players.length;
+  let idNewPlayer = targets.length;
 
   let nameNewPlayer = inputPlayer.value;
   if (inputPlayer.value == "") {
     alert("Please enter a valid name");
   } else {
-    players.push({
+    targets.push({
       id: idNewPlayer,
       playerName: nameNewPlayer,
       isDead: false,
@@ -38,7 +38,7 @@ btnAddPlayer.addEventListener("click", (e) => {
   inputPlayer.value = "";
   soundAddPlayer.play()
   render();
-  guardarEnStorage(players);
+  guardarEnStorage(targets);
 });
 
 // doom
@@ -48,11 +48,11 @@ const render = () => {
 
   let listPlayers = document.getElementById("listOfPlayers");
 
-  players.forEach(
-    (player) =>
+  targets.forEach(
+    (target) =>
       (htmlPlayers += `<li class="item_list_player" >
-          <p class="player_name">${player.playerName}</p>
-          <i class="bi bi-trash-fill player_delete"id="${player.id}"></i>
+          <p class="player_name">${target.playerName}</p>
+          <i class="bi bi-trash-fill player_delete"id="${target.id}"></i>
           </li>`)
   );
   listPlayers.innerHTML = htmlPlayers;
@@ -79,13 +79,13 @@ function guardarEnStorage(object) {
 const Play = document.getElementById("goPlay");
 
 Play.addEventListener("click",(e) =>{
-  let players = JSON.parse(localStorage.getItem("playersKey"));
+  let targets = JSON.parse(localStorage.getItem("playersKey"));
 
-  if(players.length > 1){
+  if(targets.length > 1){
     Play.href = "./game.html"
   } 
   else{
-    alert("You need at least two players to start.")
+    alert("You need at least two targets to start.")
   }
 
   
