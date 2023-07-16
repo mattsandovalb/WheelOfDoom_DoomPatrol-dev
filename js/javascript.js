@@ -9,53 +9,53 @@ let targets = [];
 const deleteButtonHandler = (e) => {
   let idToDelete = e.target.id;
   targets = targets.filter((target) => target.id != idToDelete);
-  guardarEnStorage(targets);
-  render();
+  saveToLocalStorage(targets);
+  displayTargetsList();
 };
 
 // Añadir jugador, creando un nuevo objeto y enviándolo mediante .push al array de players
 
-let btnAddPlayer = document.getElementById("addPlayer");
+let addTargetButton = document.getElementById("addTarget");
 
-let soundAddPlayer = new Audio("../assets/sounds/Sounds/sonido_boton_1.mp3")
+let addTargetSound = new Audio("../assets/sounds/Sounds/sonido_boton_1.mp3")
 
-btnAddPlayer.addEventListener("click", (e) => {
+addTargetButton.addEventListener("click", (e) => {
   e.preventDefault();
-  let inputPlayer = document.getElementById("inputPlayer");
+  let inputTarget = document.getElementById("inputTarget");
   
-  let idNewPlayer = targets.length;
+  let idNewTarget = targets.length;
 
-  let nameNewPlayer = inputPlayer.value;
-  if (inputPlayer.value == "") {
+  let nameNewTarget = inputTarget.value;
+  if (inputTarget.value == "") {
     alert("Please enter a valid name");
   } else {
     targets.push({
-      id: idNewPlayer,
-      playerName: nameNewPlayer,
+      id: idNewTarget,
+      targetName: nameNewTarget,
       isDead: false,
     });
   }
-  inputPlayer.value = "";
-  soundAddPlayer.play()
-  render();
-  guardarEnStorage(targets);
+  inputTarget.value = "";
+  addTargetSound.play()
+  displayTargetsList();
+  saveToLocalStorage(targets);
 });
 
 // doom
-const render = () => {
-  let htmlPlayers = ``;
+const displayTargetsList = () => {
+  let htmlTargets = ``;
 
 
-  let listPlayers = document.getElementById("listOfPlayers");
+  let targetsList = document.getElementById("targetsList");
 
   targets.forEach(
     (target) =>
-      (htmlPlayers += `<li class="item_list_player" >
-          <p class="player_name">${target.playerName}</p>
+      (htmlTargets += `<li class="item_list_player" >
+          <p class="player_name">${target.targetName}</p>
           <i class="bi bi-trash-fill player_delete"id="${target.id}"></i>
           </li>`)
   );
-  listPlayers.innerHTML = htmlPlayers;
+  targetsList.innerHTML = htmlTargets;
   addDeleteButton();
 };
 
@@ -67,10 +67,10 @@ const addDeleteButton = (e) => {
   );
 };
 
-render();
+displayTargetsList();
 
 
-function guardarEnStorage(object) {
+function saveToLocalStorage(object) {
   let playersLocal = object;
 
   localStorage.setItem("playersKey", JSON.stringify(playersLocal));

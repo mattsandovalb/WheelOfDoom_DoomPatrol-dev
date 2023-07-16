@@ -14,9 +14,9 @@ function killPlayer() {
 
     let indiceAleatorio = 0 + Math.floor(Math.random() * listaDeVivos.length); //generar un numero entero desde 0 hasta la longitud del array
 
-    let nombreDelJugadorSeleccionado = listaDeVivos[indiceAleatorio].playerName;
+    let nombreDelJugadorSeleccionado = listaDeVivos[indiceAleatorio].targetName;
 
-    jugadorSacrificado = listaDeVivos[indiceAleatorio].playerName;
+    jugadorSacrificado = listaDeVivos[indiceAleatorio].targetName;
 
     console.log(nombreDelJugadorSeleccionado); //console log del jugador seleccionado
 
