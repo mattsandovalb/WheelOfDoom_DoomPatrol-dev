@@ -58,16 +58,16 @@ function animationAndPopUP() {
   }
 }
 
-const nextContainer = document.getElementById("nextcontainer");
+const nextContainer = document.getElementById("nextContainer");
 const nextButton = document.getElementById("nextButton");
 
-nextButton.addEventListener("click", nextPlayer);
-function nextPlayer() {
-  imgPlayer.classList.remove("shadow");
-  imgPlayer.classList.add("transleft");
+nextButton.addEventListener("click", nextTarget);
+function nextTarget() {
+  targetImg.classList.remove("shadow");
+  targetImg.classList.add("transleft");
   nextContainer.classList.remove("block_next");
   nextButton.classList.add("waitingNext");
-  imgPlayer.classList.remove("transdown");
+  targetImg.classList.remove("transdown");
   let selectedTarget = killTarget();
   targetExplosionGif(false, selectedTarget);
   open.classList.add('vibrate_kill')
@@ -87,7 +87,7 @@ function soloKill(nameKilled) {
 
   btnNextKill.addEventListener("click", () => {
     modal_container.classList.remove("show");
-    imgPlayer.classList.add("shadow");
+    targetImg.classList.add("shadow");
     nextButton.classList.remove("waitingNext");
     nextContainer.classList.add("block_next");
   });
@@ -106,7 +106,7 @@ function gameOver() {
   console.log("aquí aparece el pupup")
   function showModal (){
       document.getElementById("alertPlayerDeleted").innerHTML =
-        "All players are dead<br/><br/>GAME OVER";
+        "All targets are dead<br/><br/>GAME OVER";
       removeButtonContinue.innerHTML = "";
       modal_container.classList.add("show");
   }
@@ -120,11 +120,11 @@ function gameOver() {
 }
 
 
-const imgPlayer = document.getElementById("player");
+const targetImg = document.getElementById("target");
 
 function targetPositioning() {
-  imgPlayer.classList.remove("transleft");
-  imgPlayer.classList.add("transdown");
+  targetImg.classList.remove("transleft");
+  targetImg.classList.add("transdown");
 }
 
 const gunContainer = document.getElementById("gun_container");
@@ -153,7 +153,7 @@ function shooting() {
 
 // funcion para cambiar de giffs del player
 
-const playerGif = document.getElementById("player");
+const playerGif = document.getElementById("target");
 
 function targetExplosionGif(instruction, name) {
   if (instruction == true) {
