@@ -78,12 +78,12 @@ function nextTarget() {
 function soloKill(nameKilled) {
   const modal_container = document.getElementById("modal_container");
   const btnNextKill = document.getElementById("nextKill");
-  const alertPlayerDeleted = document.getElementById("alertPlayerDeleted");
+  const killedTargetAlert = document.getElementById("killedTargetAlert");
   const btnList = document.getElementById("list");
 
   // const open = document.getElementById('kill');
   btnList.innerHTML = "";
-  alertPlayerDeleted.innerHTML = `${nameKilled} is dead`;
+  killedTargetAlert.innerHTML = `${nameKilled} is dead`;
 
   btnNextKill.addEventListener("click", () => {
     modal_container.classList.remove("show");
@@ -105,7 +105,7 @@ function soloKill(nameKilled) {
 function gameOver() {
   console.log("aquí aparece el pupup")
   function showModal (){
-      document.getElementById("alertPlayerDeleted").innerHTML =
+      document.getElementById("killedTargetAlert").innerHTML =
         "All targets are dead<br/><br/>GAME OVER";
       removeButtonContinue.innerHTML = "";
       modal_container.classList.add("show");
@@ -153,12 +153,12 @@ function shooting() {
 
 // funcion para cambiar de giffs del player
 
-const playerGif = document.getElementById("target");
+const targetGif = document.getElementById("target");
 
 function targetExplosionGif(instruction, name) {
   if (instruction == true) {
-    playerGif.innerHTML = `<img class="player"  src="../assets/img/player-dead.gif" alt="player" id="player_img">`;
+    targetGif.innerHTML = `<img class="player"  src="../assets/img/player-dead.gif" alt="player" id="player_img">`;
   } else {
-    playerGif.innerHTML = `<img class="player"  src="../assets/img/walking-player.gif" alt="player" id="player_img"><h4>${name}</h4>`;
+    targetGif.innerHTML = `<img class="player"  src="../assets/img/walking-player.gif" alt="player" id="player_img"><h4>${name}</h4>`;
   }
 }
