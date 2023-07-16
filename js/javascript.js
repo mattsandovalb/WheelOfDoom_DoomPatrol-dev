@@ -71,22 +71,22 @@ displayTargetsList();
 
 
 function saveToLocalStorage(object) {
-  let playersLocal = object;
+  let targetsLocal = object;
 
-  localStorage.setItem("playersKey", JSON.stringify(playersLocal));
+  localStorage.setItem("targetsKey", JSON.stringify(targetsLocal));
 }
 
-const Play = document.getElementById("goPlay");
+const playButton = document.getElementById("playButton");
 
-Play.addEventListener("click",(e) =>{
-  let targets = JSON.parse(localStorage.getItem("playersKey"));
+const playButtonClickHandler = (e) => {
+  let targets = JSON.parse(localStorage.getItem("targetsKey"));
 
-  if(targets.length > 1){
-    Play.href = "./game.html"
+  if(targets.length > 1) {
+    playButton.href = "./game.html"
   } 
   else{
     alert("You need at least two targets to start.")
-  }
+  }  
+};
 
-  
-})
+playButton.addEventListener("click", playButtonClickHandler);
