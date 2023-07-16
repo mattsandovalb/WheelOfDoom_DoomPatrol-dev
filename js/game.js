@@ -157,8 +157,8 @@ const targetGif = document.getElementById("target");
 
 function targetExplosionGif(instruction, name) {
   if (instruction == true) {
-    targetGif.innerHTML = `<img class="target"  src="../assets/img/player-dead.gif" alt="player" id="player_img">`;
+    targetGif.innerHTML = `<img class="target"  src="../assets/img/player-dead.gif" alt="target" id="target_img">`;
   } else {
-    targetGif.innerHTML = `<img class="target"  src="../assets/img/walking-player.gif" alt="player" id="player_img"><h4>${name}</h4>`;
+    targetGif.innerHTML = `<img class="target"  src="../assets/img/walking-player.gif" alt="target" id="target_img"><h4>${name}</h4>`;
   }
 }
