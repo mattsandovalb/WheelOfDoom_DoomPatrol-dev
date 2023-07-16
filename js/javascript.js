@@ -51,7 +51,7 @@ const displayTargetsList = () => {
   targets.forEach(
     (target) =>
       (htmlTargets += `<li class="item_list_player" >
-          <p class="player_name">${target.targetName}</p>
+          <p class="target_name">${target.targetName}</p>
           <i class="bi bi-trash-fill player_delete"id="${target.id}"></i>
           </li>`)
   );
